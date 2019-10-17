@@ -3,9 +3,7 @@ import React from 'react'
 
 function OneBarForChart(props) {
     let styles = {
-        width: '10px',
-        margin: '0px',
-        backgroundColor: 'rgb(0, 0, 0)'
+        display:'block'
     }
 
     console.log('props for OneBar', props)

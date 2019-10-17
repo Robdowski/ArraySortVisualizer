@@ -1,13 +1,17 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { connect } from 'react-redux'
 
 import OneBarForChart from './OneBarForChart'
 
 
 const BarChart = props => {
+    const [localArray, setLocalArray] = useState(props.array)
+    useEffect(() => {
+        setLocalArray(props.array)
+    }, [props.array])
     return(
-        <div>
-            {props.array.map((item, index) => <OneBarForChart key={index} id={index} value={item} /> )}
+        <div className='chart-container'>
+            {localArray.map((item, index) => <OneBarForChart key={index} id={index} value={item} /> )}
         </div>
     )
 }
