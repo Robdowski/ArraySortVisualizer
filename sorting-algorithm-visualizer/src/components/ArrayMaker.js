@@ -1,10 +1,13 @@
 import React from 'react'
 import { connect } from 'react-redux'
 
+import { handleRange } from '../actions'
+
 function ArrayMaker(props) {
     return (
         <div>
-            <input type='slider' min='1' value={props.sliderValue} max='50' />
+        <label htmlFor='array-size' name='array-size'>Array Size
+            <input type='range' name='array-size' min='1' defaultValue='25' max='50' onChange={handleRange}/></label>
         </div>
     )
 }
@@ -16,4 +19,4 @@ const mapStateToProps = state => {
     }
 }
 
-export default connect(mapStateToProps, {})(ArrayMaker)
+export default connect(mapStateToProps, { handleRange })(ArrayMaker)
