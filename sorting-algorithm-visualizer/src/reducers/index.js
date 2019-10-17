@@ -1,4 +1,5 @@
 const initialState = {
+    sliderValue: '25',
     arrayToSort: []
 }
 
